@@ -112,8 +112,9 @@ export default function Home() {
     <main>
       <header className="site-header">
         <div className="shell header-inner">
-          <a className="brand" href="#top" aria-label="어라운드스토리 홈">
-            <img src="/assets/aroundstory-logo-transparent.png" alt="Around Story" />
+          <a className="brand" href="#top" aria-label="aroundstory 홈">
+            <span className="brand-wordmark">aroundstory</span>
+            <span className="brand-dot" aria-hidden="true" />
           </a>
           <nav className="desktop-nav" aria-label="주요 메뉴">
             <a href="#about">소개</a>
@@ -133,7 +134,7 @@ export default function Home() {
             <p className="eyebrow">MUSIC · CARE · EDUCATION · STORY</p>
             <h1>작은 소리에 귀 기울여,{" "}<br /><strong>마음이 머무는 음악</strong>을 만듭니다.</h1>
             <p className="hero-lead">
-              어라운드스토리는 창작, 예술교육, 음악치료와 프로젝트 기획을 통해
+              aroundstory는 창작, 예술교육, 음악치료와 프로젝트 기획을 통해
               사람의 이야기가 음악이 되는 과정을 설계합니다.
             </p>
             <div className="hero-actions">
@@ -141,14 +142,16 @@ export default function Home() {
               <a className="inline-link" href="#projects">대표 프로젝트 <span aria-hidden="true">↗</span></a>
             </div>
           </div>
-          <aside className="hero-panel" aria-label="어라운드스토리 브랜드 메시지">
+          <aside className="hero-panel" aria-label="aroundstory 브랜드 메시지">
             <div className="staff-lines" aria-hidden="true"><i /><i /><i /></div>
-            <blockquote>
-              “언어가 끝나는 곳에서<br />음악은 시작된다.”
-              <cite>W. A. Mozart</cite>
-            </blockquote>
+            <div className="hero-panel-copy">
+              <p className="hero-panel-kicker">PLAY · LEARN · GROW</p>
+              <blockquote>음악으로 배우고,<br />마음으로 자라는 시간.</blockquote>
+              <p className="hero-panel-note">각자의 속도와 목소리를 존중하는 배움을 만듭니다.</p>
+            </div>
+            <img className="hero-ari" src="/assets/ari.png" alt="" />
             <div className="hero-panel-bottom">
-              <span>AROUND STORY</span>
+              <span>aroundstory</span>
               <p>Listen closely.<br />Create sincerely.</p>
             </div>
           </aside>
@@ -157,7 +160,7 @@ export default function Home() {
 
       <section className="about section" id="about">
         <div className="shell">
-          <div className="section-index"><span>01</span><p>ABOUT AROUNDSTORY</p></div>
+          <div className="section-index"><span>01</span><p>ABOUT aroundstory</p></div>
           <div className="about-grid">
             <div className="about-heading">
               <h2>상담의 깊이와<br />창작의 감각을<br />하나의 이야기로.</h2>
@@ -180,7 +183,7 @@ export default function Home() {
             <aside className="ari-card">
               <div className="ari-image-wrap">
                 <div className="ari-shape" aria-hidden="true" />
-                <img src="/assets/ari.png" alt="어라운드스토리 대표 캐릭터 아리" />
+                <img src="/assets/ari.png" alt="aroundstory 대표 캐릭터 아리" />
               </div>
               <div className="ari-copy">
                 <p className="micro-label">CHARACTER · ARI</p>
@@ -232,7 +235,7 @@ export default function Home() {
           <div className="section-index"><span>03</span><p>SELECTED PROJECTS</p></div>
           <div className="section-title-row projects-title-row">
             <h2>기획부터 창작과 현장까지,<br />끝까지 완성한 프로젝트</h2>
-            <p>어라운드스토리의 역량을 가장 잘 보여주는 세 개의 작업을 엄선했습니다.</p>
+            <p>aroundstory의 역량을 가장 잘 보여주는 세 개의 작업을 엄선했습니다.</p>
           </div>
           <div className="project-grid">
             {projects.map((project, index) => (
@@ -249,7 +252,7 @@ export default function Home() {
               </article>
             ))}
           </div>
-          <div className="proof-strip" aria-label="어라운드스토리 주요 역량 지표">
+          <div className="proof-strip" aria-label="aroundstory 주요 역량 지표">
             <div><strong>2008—현재</strong><span>음악교육 활동</span></div>
             <div><strong>2</strong><span>등록 특허</span></div>
             <div><strong>3</strong><span>등록 브랜드</span></div>
@@ -274,7 +277,7 @@ export default function Home() {
                 음악, 언어, 자연탐구처럼 서로 다른 능력 영역을 함께 바라보는 교육적 틀입니다.
               </p>
               <p>
-                어라운드스토리는 지문 자료를 하나의 참고 정보로 활용하고,
+                aroundstory는 지문 자료를 하나의 참고 정보로 활용하고,
                 보호자·학습자와의 대화와 평소의 관심·행동·학습 경험을 함께 살펴
                 교육과 소통의 실마리를 찾습니다.
               </p>
@@ -334,7 +337,7 @@ export default function Home() {
               자기표현과 관계, 회복과 성장을 경험하도록 음악적 장면을 설계합니다.
             </p>
             <dl className="credentials">
-              <div><dt>현재</dt><dd>어라운드스토리 / 아리엘 브레인앤뮤직랩 대표</dd></div>
+              <div><dt>현재</dt><dd>aroundstory / 아리엘 브레인앤뮤직랩 대표</dd></div>
               <div><dt>전공</dt><dd>숙명여자대학교 음악치료학 석사</dd></div>
               <div><dt>활동</dt><dd>음악치료·문화예술교육·창작음악 프로젝트 2016—현재</dd></div>
               <div><dt>연구</dt><dd>치료적 노래만들기와 아동의 자기표현·의사소통·학업적 자기효능감</dd></div>
@@ -359,9 +362,9 @@ export default function Home() {
 
       <footer>
         <div className="shell footer-inner">
-          <img src="/assets/aroundstory-logo-transparent.png" alt="Around Story" />
-          <p>모두의 음악친구 어라운드스토리</p>
-          <div><a href="#top">맨 위로 ↑</a><span>© {new Date().getFullYear()} Aroundstory</span></div>
+          <a className="footer-brand" href="#top" aria-label="aroundstory 홈">aroundstory</a>
+          <p>모두의 음악친구 aroundstory</p>
+          <div><a href="#top">맨 위로 ↑</a><span>© {new Date().getFullYear()} aroundstory</span></div>
         </div>
       </footer>
     </main>
