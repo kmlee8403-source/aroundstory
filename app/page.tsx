@@ -1,5 +1,7 @@
 import { MobileNav } from "./MobileNav";
 
+const publicBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const coreServices = [
   {
     number: "01",
@@ -100,7 +102,7 @@ const guidanceBenefits = [
   ["생활 속 실천으로 연결", "결과를 점수로 끝내지 않고 가정과 수업에서 시도할 활동으로 이어갑니다."],
 ];
 
-const process = [
+const consultationProcess = [
   ["01", "상담 목표 확인", "연령과 현재 고민, 상담에서 알고 싶은 내용을 먼저 듣습니다."],
   ["02", "동의 및 자료 수집", "보호자 동의 후 지문 자료와 관심·행동·학습 경험을 함께 살핍니다."],
   ["03", "참고 프로필 정리", "분류 결과를 면담·관찰 내용과 함께 검토해 강점과 탐색 질문을 정리합니다."],
@@ -149,7 +151,7 @@ export default function Home() {
               <blockquote>음악으로 배우고,<br />마음으로 자라는 시간.</blockquote>
               <p className="hero-panel-note">각자의 속도와 목소리를 존중하는 배움을 만듭니다.</p>
             </div>
-            <img className="hero-ari" src="/assets/ari.png" alt="" />
+            <img className="hero-ari" src={`${publicBasePath}/assets/ari.png`} alt="" />
             <div className="hero-panel-bottom">
               <span>aroundstory</span>
               <p>Listen closely.<br />Create sincerely.</p>
@@ -183,7 +185,7 @@ export default function Home() {
             <aside className="ari-card">
               <div className="ari-image-wrap">
                 <div className="ari-shape" aria-hidden="true" />
-                <img src="/assets/ari.png" alt="aroundstory 대표 캐릭터 아리" />
+                <img src={`${publicBasePath}/assets/ari.png`} alt="aroundstory 대표 캐릭터 아리" />
               </div>
               <div className="ari-copy">
                 <p className="micro-label">CHARACTER · ARI</p>
@@ -309,7 +311,7 @@ export default function Home() {
           <div className="lab-subsection process-section">
             <div className="subsection-head"><p>상담 진행 과정</p><span>03 / 03</span></div>
             <ol className="process-list">
-              {process.map(([number, title, description]) => (
+              {consultationProcess.map(([number, title, description]) => (
                 <li key={number}><span>{number}</span><h3>{title}</h3><p>{description}</p></li>
               ))}
             </ol>
