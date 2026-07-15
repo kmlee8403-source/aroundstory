@@ -1,4 +1,4 @@
-import { ArrowUpRight, Disc3, ExternalLink, Headphones, Search } from "lucide-react";
+import { ArrowUpRight, ExternalLink, Headphones, Search } from "lucide-react";
 import { PageIntro } from "../components/PageIntro";
 import { SiteFooter } from "../components/SiteFooter";
 import { SiteHeader } from "../components/SiteHeader";
@@ -20,22 +20,22 @@ export default function MusicPage() {
           index="05"
           eyebrow="OFFICIAL MUSIC"
           title={<>이야기에서 태어나<br /><strong>오래 머무는 음악</strong></>}
-          description="창작자 아리(ari)가 사람과 장소, 돌봄의 순간에서 길어 올린 공식 발매 음원을 한곳에 모았습니다."
+          description="아리(ari)의 공식 발매작과 다른 아티스트의 음원으로 이어진 작업 참여 기록을 한곳에 모았습니다."
           tone="dark"
         />
 
         <section className="music-overview">
           <div className="shell music-overview-grid">
             <div>
-              <p className="section-kicker">ARI (ARI) DISCOGRAPHY</p>
+              <p className="section-kicker">ARI MUSIC CATALOG</p>
               <h2>aroundstory의 결에<br />가장 가까운 기록</h2>
             </div>
             <div className="music-fit-copy">
-              <p>음원 메뉴는 교육·치료·프로젝트에서 출발한 이야기가 실제 창작물로 이어지는 과정을 보여 줍니다. 그래서 별도의 부가 메뉴가 아니라 aroundstory의 정체성을 완성하는 중심 기록입니다.</p>
+              <p>교육·치료·프로젝트에서 출발한 이야기가 아리의 발매작과 소율(soyul)·오뉴(onyu)의 음원 작업으로 이어진 과정을 함께 보여 줍니다.</p>
               <div className="catalog-stats">
-                <span><strong>{releases.length}</strong>발매작</span>
-                <span><strong>{totalTracks}</strong>수록곡</span>
-                <span><strong>2021—2025</strong>공식 카탈로그</span>
+                <span><strong>{releases.length}</strong>발매·참여작</span>
+                <span><strong>{totalTracks}</strong>수록 음원</span>
+                <span><strong>2021—2025</strong>음악 작업 기록</span>
               </div>
             </div>
           </div>
@@ -46,7 +46,7 @@ export default function MusicPage() {
             <div className="catalog-toolbar">
               <div>
                 <p className="section-kicker">ALL RELEASES</p>
-                <h2>발매작과 플랫폼 링크</h2>
+                <h2>발매·참여작과 플랫폼 링크</h2>
               </div>
               <div className="link-legend">
                 <span><ExternalLink size={14} /> 곡 상세</span>
@@ -58,8 +58,14 @@ export default function MusicPage() {
               {releases.map((release, index) => (
                 <details className={`release release-${release.accent}`} key={`${release.year}-${release.title}`} open={index < 2}>
                   <summary>
-                    <span className="release-art" aria-hidden="true"><Disc3 strokeWidth={1.25} /></span>
-                    <span className="release-meta"><small>{release.year} · {release.kind}</small><strong>{release.title}</strong></span>
+                    <span className="release-art">
+                      <img src={release.cover} alt={`${release.title} 앨범 재킷`} loading="lazy" decoding="async" />
+                    </span>
+                    <span className="release-meta">
+                      <small>{release.year} · {release.kind}</small>
+                      <strong>{release.title}</strong>
+                      <span className="release-credit">{release.artist} · {release.credit}</span>
+                    </span>
                     <span className="release-count">{release.tracks.length} TRACKS</span>
                     <span className="release-toggle" aria-hidden="true" />
                   </summary>
@@ -70,7 +76,7 @@ export default function MusicPage() {
                         <div className="track-main">
                           <h3>{track.title}</h3>
                           <div className="platform-links">
-                            {trackLinks(track, release.title).map((link) => (
+                            {trackLinks(track, release).map((link) => (
                               <a
                                 className={link.kind === "search" ? "platform-search" : undefined}
                                 href={link.href}
@@ -82,7 +88,6 @@ export default function MusicPage() {
                                 {link.kind === "search" ? <Search size={12} /> : null}{link.label}
                               </a>
                             ))}
-                            {!track.melon || !track.vibe ? <small className="platform-missing">Melon·VIBE 상세 미확인</small> : null}
                           </div>
                         </div>
                       </li>
@@ -92,13 +97,13 @@ export default function MusicPage() {
               ))}
             </div>
 
-            <p className="catalog-note"><Search size={15} /> Spotify와 YouTube Music은 동명이인·동명곡 혼선을 막기 위해 ‘곡명 + 앨범명 + 아리(ari)’ 검색 결과로 안내합니다. 나머지는 확인된 곡 상세 페이지입니다.</p>
+            <p className="catalog-note"><Search size={15} /> 확인된 주소는 곡 또는 앨범 상세 페이지로 연결합니다. 상세 주소가 공개 검색에서 확인되지 않은 플랫폼은 곡명·앨범명·아티스트를 함께 넣은 검색 결과로 안내합니다.</p>
           </div>
         </section>
 
         <section className="artist-platforms">
           <div className="shell artist-platform-grid">
-            <div className="artist-platform-copy"><Headphones strokeWidth={1.4} /><h2>아리(ari)의 전체 음원 보기</h2><p>자주 쓰는 국내 플랫폼에서 아티스트의 발매 목록을 바로 확인하세요.</p></div>
+            <div className="artist-platform-copy"><Headphones strokeWidth={1.4} /><h2>아리(ari)의 전체 발매 음원</h2><p>아리 이름으로 발매한 음원은 국내 주요 플랫폼의 아티스트 페이지에서 모아볼 수 있습니다.</p></div>
             <div className="artist-link-grid">
               {artistPlatforms.map((platform) => (
                 <a href={platform.href} key={platform.label} target="_blank" rel="noreferrer">{platform.label}<ArrowUpRight size={17} /></a>
