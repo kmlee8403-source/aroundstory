@@ -1,13 +1,16 @@
 import { MobileNav } from "../MobileNav";
-import { navigation, sitePath } from "../site-config";
+import { navigation, publicBasePath, sitePath } from "../site-config";
 
 export function SiteHeader() {
   return (
     <header className="site-header">
       <div className="shell header-inner">
         <a className="brand" href={sitePath("/")} aria-label="aroundstory 홈">
-          <span className="brand-wordmark">aroundstory</span>
-          <span className="brand-dot" aria-hidden="true" />
+          <img
+            className="brand-logo"
+            src={`${publicBasePath}/assets/aroundstory-logo-transparent.png`}
+            alt="aroundstory"
+          />
         </a>
         <nav className="desktop-nav" aria-label="주요 메뉴">
           {navigation.map((item) => (

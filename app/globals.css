@@ -14,6 +14,8 @@
   --bronze: #a87840;
   --rose: #c58d85;
   --header-height: 74px;
+  --font-sans: Pretendard, "SUIT", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", "Segoe UI", sans-serif;
+  --font-editorial: Georgia, "Times New Roman", Pretendard, "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
 }
 
 * {
@@ -29,7 +31,7 @@ body {
   margin: 0;
   color: var(--ink);
   background: var(--paper);
-  font-family: Pretendard, "Noto Sans KR", "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+  font-family: var(--font-sans);
   line-height: 1.65;
   word-break: keep-all;
   -webkit-font-smoothing: antialiased;
@@ -58,6 +60,12 @@ h3,
 p,
 blockquote {
   margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
 }
 
 button,
@@ -93,10 +101,21 @@ select {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-editorial);
   font-size: 25px;
   font-weight: 700;
   letter-spacing: -0.04em;
+}
+
+.brand {
+  width: 180px;
+  height: 62px;
+}
+
+.brand-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .brand-dot {
@@ -239,11 +258,11 @@ select {
 
 .home-hero h1 {
   max-width: 760px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(44px, 5.5vw, 72px);
-  font-weight: 500;
-  line-height: 1.15;
-  letter-spacing: -0.065em;
+  font-family: var(--font-editorial);
+  font-size: clamp(40px, 4.8vw, 60px);
+  font-weight: 600;
+  line-height: 1.24;
+  letter-spacing: -0.038em;
 }
 
 .home-hero h1 strong {
@@ -275,7 +294,7 @@ select {
 
 .home-brand-card {
   position: relative;
-  min-height: 480px;
+  min-height: 440px;
   padding: 32px 33px;
   overflow: hidden;
   border: 1px solid rgba(46, 80, 59, 0.18);
@@ -287,10 +306,10 @@ select {
 .home-brand-card::after {
   content: "";
   position: absolute;
-  width: 270px;
-  height: 270px;
-  right: -55px;
-  bottom: -50px;
+  width: 220px;
+  height: 220px;
+  right: -42px;
+  bottom: -38px;
   border-radius: 50%;
   background: var(--sage);
 }
@@ -298,9 +317,13 @@ select {
 .home-brand-card img {
   position: absolute;
   z-index: 2;
-  width: min(65%, 280px);
-  right: 8px;
-  bottom: 2px;
+  width: auto;
+  height: min(56%, 246px);
+  max-width: 44%;
+  right: 24px;
+  bottom: -16px;
+  object-fit: contain;
+  clip-path: inset(0 0 16% 0);
   filter: drop-shadow(0 20px 15px rgba(46, 80, 59, 0.15));
 }
 
@@ -319,6 +342,7 @@ select {
 .brand-card-copy {
   position: relative;
   z-index: 3;
+  max-width: 74%;
   margin-top: 45px;
 }
 
@@ -330,11 +354,11 @@ select {
 
 .brand-card-copy blockquote {
   margin-top: 14px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(27px, 3vw, 40px);
+  font-family: var(--font-editorial);
+  font-size: clamp(26px, 2.6vw, 34px);
   font-weight: 700;
-  line-height: 1.3;
-  letter-spacing: -0.055em;
+  line-height: 1.38;
+  letter-spacing: -0.036em;
 }
 
 .brand-card-copy span {
@@ -393,10 +417,10 @@ select {
 
 .film-copy h2 {
   margin-top: 25px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(36px, 4.3vw, 58px);
-  line-height: 1.2;
-  letter-spacing: -0.055em;
+  font-family: var(--font-editorial);
+  font-size: clamp(32px, 3.6vw, 47px);
+  line-height: 1.27;
+  letter-spacing: -0.036em;
 }
 
 .film-copy > p:not(.section-chip) {
@@ -498,11 +522,11 @@ select {
 
 .page-intro h1 {
   margin-top: 26px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(43px, 5vw, 66px);
-  font-weight: 500;
-  line-height: 1.16;
-  letter-spacing: -0.06em;
+  font-family: var(--font-editorial);
+  font-size: clamp(38px, 4.3vw, 54px);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.04em;
 }
 
 .page-intro h1 strong {
@@ -538,10 +562,10 @@ select {
 .catalog-toolbar h2,
 .artist-platform-copy h2 {
   margin-top: 9px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(31px, 3.8vw, 47px);
-  line-height: 1.25;
-  letter-spacing: -0.05em;
+  font-family: var(--font-editorial);
+  font-size: clamp(29px, 3.4vw, 42px);
+  line-height: 1.3;
+  letter-spacing: -0.036em;
 }
 
 .split-heading {
@@ -605,7 +629,7 @@ select {
   top: 22px;
   right: 24px;
   color: var(--bronze);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-editorial);
   font-size: 12px;
   font-style: italic;
 }
@@ -711,14 +735,16 @@ select {
 }
 
 .note-card strong {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 19px;
-  line-height: 1.45;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 750;
+  line-height: 1.65;
+  letter-spacing: -0.018em;
 }
 
 .note-card p {
   color: rgba(255, 253, 248, 0.68);
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .note-card a {
@@ -764,7 +790,7 @@ select {
 .catalog-stats strong {
   display: block;
   color: var(--forest);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-editorial);
   font-size: 23px;
 }
 
@@ -850,7 +876,7 @@ select {
 
 .release-meta strong {
   margin-top: 2px;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-editorial);
   font-size: 22px;
   line-height: 1.3;
   letter-spacing: -0.035em;
@@ -912,7 +938,7 @@ select {
 .track-number {
   padding-top: 2px;
   color: var(--bronze);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-editorial);
   font-size: 12px;
   font-style: italic;
 }
@@ -1042,10 +1068,10 @@ select {
 
 .content-heading h2 {
   margin-top: 20px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(32px, 4vw, 48px);
-  line-height: 1.22;
-  letter-spacing: -0.052em;
+  font-family: var(--font-editorial);
+  font-size: clamp(30px, 3.5vw, 42px);
+  line-height: 1.3;
+  letter-spacing: -0.036em;
 }
 
 .content-heading-inline {
@@ -1094,7 +1120,7 @@ select {
 .principle-card > p {
   margin-top: 30px;
   color: var(--bronze);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-editorial);
   font-size: 13px;
   font-style: italic;
 }
@@ -1140,14 +1166,14 @@ select {
 .service-number,
 .project-index {
   color: var(--bronze);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-editorial);
   font-size: 13px;
   font-style: italic;
 }
 
 .service-card h3 {
   margin-top: 42px;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-editorial);
   font-size: 24px;
   letter-spacing: -0.04em;
 }
@@ -1168,14 +1194,14 @@ select {
 
 .ari-strip {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
+  grid-template-columns: 0.62fr 1.38fr;
   align-items: center;
   gap: 70px;
 }
 
 .ari-visual {
   position: relative;
-  height: 290px;
+  height: 250px;
   overflow: hidden;
   border-radius: 150px 22px 22px 150px;
   background: var(--sage);
@@ -1217,10 +1243,11 @@ select {
 .ari-visual img {
   position: absolute;
   z-index: 3;
-  height: 94%;
-  right: 4%;
-  bottom: -7%;
+  height: 88%;
+  right: 8%;
+  bottom: -12px;
   object-fit: contain;
+  clip-path: inset(0 0 16% 0);
   filter: drop-shadow(0 18px 13px rgba(30, 53, 40, 0.18));
 }
 
@@ -1235,10 +1262,10 @@ select {
 
 .ari-copy h2 {
   margin-top: 21px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(33px, 4vw, 49px);
-  line-height: 1.23;
-  letter-spacing: -0.05em;
+  font-family: var(--font-editorial);
+  font-size: clamp(30px, 3.5vw, 42px);
+  line-height: 1.3;
+  letter-spacing: -0.036em;
 }
 
 .ari-copy > p:last-child {
@@ -1269,9 +1296,9 @@ select {
 
 .representative-name {
   margin-top: 10px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(38px, 4.8vw, 60px);
-  letter-spacing: -0.055em;
+  font-family: var(--font-editorial);
+  font-size: clamp(34px, 4vw, 50px);
+  letter-spacing: -0.04em;
 }
 
 .representative-name span {
@@ -1354,7 +1381,7 @@ select {
 
 .project-card h3 {
   margin-top: 5px;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-editorial);
   font-size: 29px;
   letter-spacing: -0.045em;
 }
@@ -1418,7 +1445,7 @@ select {
 }
 
 .exhibition-year {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-editorial);
   font-size: 13px;
   font-style: italic;
 }
@@ -1428,7 +1455,7 @@ select {
 }
 
 .exhibition-card h3 {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-editorial);
   font-size: 21px;
   line-height: 1.35;
   letter-spacing: -0.03em;
@@ -1475,7 +1502,7 @@ select {
 
 .project-bridge-inner h2 {
   margin-top: 8px;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-editorial);
   font-size: clamp(28px, 3.6vw, 42px);
   line-height: 1.25;
   letter-spacing: -0.045em;
@@ -1496,9 +1523,9 @@ select {
 
 .channels-heading h2 {
   margin-top: 8px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(34px, 4vw, 48px);
-  letter-spacing: -0.05em;
+  font-family: var(--font-editorial);
+  font-size: clamp(30px, 3.5vw, 42px);
+  letter-spacing: -0.036em;
 }
 
 .channels-heading > p {
@@ -1580,7 +1607,7 @@ select {
 
 .channel-card-copy h3 {
   margin-top: 5px;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-editorial);
   font-size: clamp(23px, 2.6vw, 31px);
   line-height: 1.27;
   letter-spacing: -0.04em;
@@ -1616,7 +1643,7 @@ select {
 
 .channel-invitation-inner h2 {
   margin-top: 7px;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-editorial);
   font-size: clamp(28px, 3.4vw, 40px);
   letter-spacing: -0.045em;
 }
@@ -1726,7 +1753,8 @@ select {
   }
 
   .brand {
-    font-size: 22px;
+    width: 144px;
+    height: 52px;
   }
 
   .desktop-nav {
@@ -1797,7 +1825,7 @@ select {
   }
 
   .home-hero h1 {
-    font-size: clamp(40px, 12vw, 56px);
+    font-size: clamp(38px, 10.5vw, 48px);
   }
 
   .hero-actions {
@@ -1807,12 +1835,23 @@ select {
   }
 
   .home-brand-card {
-    min-height: 380px;
+    min-height: 370px;
     border-radius: 27px 27px 110px 27px;
   }
 
+  .home-brand-card img {
+    height: 50%;
+    max-width: 40%;
+    right: 15px;
+    bottom: -12px;
+  }
+
+  .brand-card-copy {
+    max-width: 78%;
+  }
+
   .brand-card-copy blockquote {
-    font-size: 31px;
+    font-size: 27px;
   }
 
   .scroll-cue {
@@ -1829,7 +1868,7 @@ select {
   }
 
   .film-copy h2 {
-    font-size: 40px;
+    font-size: 34px;
   }
 
   .page-intro {
@@ -1847,7 +1886,7 @@ select {
 
   .page-intro h1 {
     margin-top: 21px;
-    font-size: 42px;
+    font-size: 36px;
   }
 
   .page-intro-copy {
@@ -2021,7 +2060,7 @@ select {
   }
 
   .ari-visual {
-    height: 250px;
+    height: 230px;
     border-radius: 110px 20px 20px 110px;
   }
 

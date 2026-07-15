@@ -33,27 +33,27 @@ export default function Home() {
               </div>
             </aside>
           </div>
-          <a className="scroll-cue" href="#featured-film">대표 영상 보기 <span aria-hidden="true">↓</span></a>
+          <a className="scroll-cue" href="#featured-film">aroundstory 이야기 보기 <span aria-hidden="true">↓</span></a>
         </section>
 
         <section className="featured-film" id="featured-film">
           <div className="shell film-grid">
             <div className="film-copy">
-              <p className="section-chip section-chip-light"><span>PLAY</span>FEATURED FILM</p>
-              <h2>제주의 숨과 노래를<br />하나의 장면으로.</h2>
-              <p>〈해녀의 마음〉과 〈평화의 섬, 제주〉가 만들어지는 스튜디오의 시간을 담았습니다.</p>
+              <p className="section-chip section-chip-light"><span>PLAY</span>YOUTUBE STORIES</p>
+              <h2>aroundstory의<br />이야기들</h2>
+              <p>음악놀이와 교육, 창작과 치료가 만나는 순간들을 영상으로 기록합니다. 채널의 새로운 이야기와 추천 영상을 만나보세요.</p>
               <a href="https://www.youtube.com/@%EC%96%B4%EB%9D%BC%EC%9A%B4%EB%93%9C%EC%8A%A4%ED%86%A0%EB%A6%AC" target="_blank" rel="noreferrer">
                 aroundstory 유튜브 <ArrowRight size={16} />
               </a>
             </div>
             <div className="video-frame">
               <iframe
-                src="https://www.youtube-nocookie.com/embed/r9EtH6AKswo?rel=0"
-                title="해녀의 마음과 평화의 섬 제주 스튜디오 녹음 스케치"
+                src="https://www.youtube-nocookie.com/embed/videoseries?list=UUTXGWJs4objkOwIRkI9A6vw&rel=0"
+                title="aroundstory 유튜브 채널의 최신 이야기들"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               />
-              <span className="video-mark" aria-hidden="true"><Play size={18} fill="currentColor" /> aroundstory film</span>
+              <span className="video-mark" aria-hidden="true"><Play size={18} fill="currentColor" /> aroundstory stories</span>
             </div>
           </div>
         </section>
