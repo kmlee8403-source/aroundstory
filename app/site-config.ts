@@ -5,10 +5,23 @@ export function sitePath(path = "/") {
   return `${publicBasePath}${normalized}`;
 }
 
-export const navigation = [
+export type NavigationItem = {
+  href: string;
+  label: string;
+  children?: { href: string; label: string }[];
+};
+
+export const navigation: NavigationItem[] = [
   { href: "/about/", label: "소개" },
   { href: "/projects/", label: "프로젝트" },
-  { href: "/assessment/", label: "지문적성검사" },
+  {
+    href: "/lab/",
+    label: "아리엘브레인앤뮤직랩",
+    children: [
+      { href: "/lab/music-therapy/", label: "음악치료" },
+      { href: "/assessment/", label: "다중지능지문적성검사" },
+    ],
+  },
   { href: "/music/", label: "음원" },
   { href: "/channels/", label: "유튜브" },
 ];

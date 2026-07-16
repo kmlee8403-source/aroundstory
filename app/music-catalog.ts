@@ -1,3 +1,5 @@
+import { publicBasePath } from "./site-config";
+
 export type Track = {
   title: string;
   searchQuery?: string;
@@ -21,8 +23,8 @@ export type Release = {
   tracks: Track[];
 };
 
-function bugsCover(albumId: number) {
-  return `https://image.bugsm.co.kr/album/images/200/${Math.floor(albumId / 100)}/${albumId}.jpg`;
+function localCover(filename: string) {
+  return `${publicBasePath}/assets/music-covers/${filename}`;
 }
 
 export const releases: Release[] = [
@@ -34,7 +36,7 @@ export const releases: Release[] = [
     kind: "싱글",
     accent: "blue",
     bugsAlbum: 20765069,
-    cover: bugsCover(20765069),
+    cover: localCover("20765069.jpg"),
     tracks: [
       { title: "평화의 섬, 제주 (Feat. 강정아)", melon: 600382047, genie: 112348619, bugs: 33722241, vibe: 97743766, apple: [1848819394, 1848819395] },
       { title: "해녀의 마음 (Feat. 강정아)", melon: 600382048, genie: 112348620, bugs: 33722242, vibe: 97743767, apple: [1848819394, 1848819396] },
@@ -49,7 +51,7 @@ export const releases: Release[] = [
     kind: "싱글",
     accent: "sage",
     bugsAlbum: 20728675,
-    cover: bugsCover(20728675),
+    cover: localCover("20728675.jpg"),
     tracks: [
       { title: "선생님, 사랑해요 (feat. 오뉴(onyu), 소율(soyul), 주하, 주은, 시윤)", melon: 38994333, genie: 110218508, bugs: 33547792, vibe: 93967591, apple: [1815668954, 1815668955] },
       { title: "선생님, 사랑해요 (Inst.)", melon: 38994334, genie: 110218509, bugs: 33547793, vibe: 93967592, apple: [1815668954, 1815668958] },
@@ -63,7 +65,7 @@ export const releases: Release[] = [
     kind: "싱글",
     accent: "rose",
     bugsAlbum: 20710382,
-    cover: bugsCover(20710382),
+    cover: localCover("20710382.jpg"),
     tracks: [
       { title: "we can we are we love (feat. 오뉴(onyu), 소율(soyul), 주하, 주은, 시윤)", melon: 38645672, genie: 109327277, bugs: 33465609, vibe: 91068662, apple: [1800633431, 1800633432] },
       { title: "we can we are we love (Inst.)", melon: 38645673, genie: 109327278, bugs: 33465610, vibe: 91068663, apple: [1800633431, 1800633434] },
@@ -77,7 +79,7 @@ export const releases: Release[] = [
     kind: "싱글",
     accent: "bronze",
     bugsAlbum: 20710380,
-    cover: "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ef/df/78/efdf78ec-45d9-0b9c-7f68-57968a351f78/8800297478887_cover.jpg/1200x1200bb.jpg",
+    cover: localCover("nau-day.jpg"),
     appleAlbumUrl: "https://music.apple.com/kr/album/%EB%82%98%EC%9A%B0%EC%9D%98-%ED%95%98%EB%A3%A8-single/1800636185",
     tracks: [
       { title: "나우의 하루", melon: 38645429, genie: 109327286, bugs: 33465605, apple: [1800636185, 1800636186] },
@@ -92,7 +94,7 @@ export const releases: Release[] = [
     kind: "싱글",
     accent: "bronze",
     bugsAlbum: 20631516,
-    cover: bugsCover(20631516),
+    cover: localCover("20631516.jpg"),
     tracks: [
       { title: "헛 (for viola & piano)", melon: 37352674, genie: 105838228, bugs: 33129674, vibe: 83777918, apple: [1737958557, 1737958558] },
     ],
@@ -105,7 +107,7 @@ export const releases: Release[] = [
     kind: "정규",
     accent: "blue",
     bugsAlbum: 20630234,
-    cover: bugsCover(20630234),
+    cover: localCover("20630234.jpg"),
     tracks: [
       { title: "나 같은 죄인 살리신", melon: 37315809, genie: 105771432, bugs: 33124373, vibe: 83654307, apple: [1766490784, 1766490785] },
       { title: "주 안에 있는 나에게", melon: 37315810, genie: 105771433, bugs: 33124374, vibe: 83654308, apple: [1766490784, 1766490786] },
@@ -130,7 +132,7 @@ export const releases: Release[] = [
     kind: "정규",
     accent: "sage",
     bugsAlbum: 20629608,
-    cover: bugsCover(20629608),
+    cover: localCover("20629608.jpg"),
     tracks: [
       { title: "내 기도하는 그 시간", melon: 37312075, genie: 105753114, bugs: 33121743, vibe: 83638402, apple: [1766488250, 1766488251] },
       { title: "나 같은 죄인 살리신", melon: 37312076, genie: 105753115, bugs: 33121744, vibe: 83638403, apple: [1766488250, 1766488252] },
@@ -149,7 +151,7 @@ export const releases: Release[] = [
     kind: "정규",
     accent: "rose",
     bugsAlbum: 20532565,
-    cover: bugsCover(20532565),
+    cover: localCover("20532565.jpg"),
     tracks: [
       { title: "나는 나로 나와 (Narr.)", melon: 35901560, genie: 99347833, bugs: 32721632, vibe: 58926375, apple: [1658273688, 1658273690] },
       { title: "그래도 사랑해", melon: 35901561, genie: 99347834, bugs: 32721633, vibe: 58926376, apple: [1658273688, 1658273694] },
@@ -170,7 +172,7 @@ export const releases: Release[] = [
     kind: "싱글",
     accent: "bronze",
     bugsAlbum: 20486686,
-    cover: bugsCover(20486686),
+    cover: localCover("20486686.jpg"),
     tracks: [
       { title: "제주왈츠", melon: 35541435, genie: 97930227, bugs: 32620741, vibe: 56932340, apple: [1718185717, 1718185718] },
       { title: "제주왈츠 (Inst.)", melon: 35541436, genie: 97930228, bugs: 32620742, vibe: 56932341, apple: [1718185717, 1718185719] },
@@ -184,7 +186,7 @@ export const releases: Release[] = [
     kind: "싱글",
     accent: "sage",
     bugsAlbum: 20449280,
-    cover: "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/28/86/9d/28869d98-e691-864e-25c7-8e630542ecc2/1348904_3.png/1200x1200bb.jpg",
+    cover: localCover("mental-health-song.jpg"),
     tracks: [
       { title: "마음 건강 지킴송", melon: 34635439, bugs: 32460620, apple: [1609890826, 1609890827] },
     ],
@@ -197,7 +199,7 @@ export const releases: Release[] = [
     kind: "싱글",
     accent: "rose",
     bugsAlbum: 20449114,
-    cover: "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/68/2a/28/682a28eb-20ea-bdb8-be53-929e23806c83/1348905_1.png/1200x1200bb.jpg",
+    cover: localCover("onyu-geuraedo.jpg"),
     tracks: [
       { title: "그래도", melon: 34626872, genie: 95954425, bugs: 32459944, apple: [1609527509, 1609527510] },
     ],
@@ -210,7 +212,7 @@ export const releases: Release[] = [
     kind: "싱글",
     accent: "blue",
     bugsAlbum: 20447934,
-    cover: "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/39/78/39/397839fc-89b1-18ed-7104-62d116704025/1348903_3.png/1200x1200bb.jpg",
+    cover: localCover("turn-on-your-light.jpg"),
     tracks: [
       { title: "Turn on your light", melon: 34600163, genie: 95848450, bugs: 32454760, apple: [1608826191, 1608826193] },
     ],
@@ -223,7 +225,7 @@ export const releases: Release[] = [
     kind: "싱글",
     accent: "bronze",
     bugsAlbum: 20437936,
-    cover: "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/72/af/d9/72afd98f-00ae-3ed4-d05b-b9da8e181cf3/1348556_1.jpg/1200x1200bb.jpg",
+    cover: localCover("christmas-melody.jpg"),
     appleAlbumUrl: "https://music.apple.com/kr/album/christmas-melody-single/1600011481",
     tracks: [
       { title: "Christmas melody", searchQuery: "Christmas melody 크리스마스 멜로디 소율 soyul 아리 ari", melon: 34400158, genie: 95266473, bugs: 32408425, apple: [1600011481, 1600011482] },
@@ -237,7 +239,7 @@ export const releases: Release[] = [
     kind: "EP",
     accent: "blue",
     bugsAlbum: 20430610,
-    cover: bugsCover(20430610),
+    cover: localCover("20430610.jpg"),
     tracks: [
       { title: "This is my Father's world ‘spring’", melon: 34234233, genie: 94844595, bugs: 32374951, vibe: 51552300, apple: [1594768453, 1594768467] },
       { title: "Rainy Jeju", melon: 34234234, genie: 94844596, bugs: 32374952, vibe: 51552301, apple: [1594768453, 1594768471] },
@@ -276,5 +278,6 @@ export function trackLinks(track: Track, release: Release) {
       : { label: "Apple Music", href: `https://music.apple.com/kr/search?term=${query}`, kind: "search" },
     { label: "Spotify", href: `https://open.spotify.com/search/${query}`, kind: "search" },
     { label: "YouTube Music", href: `https://music.youtube.com/search?q=${query}`, kind: "search" },
+    { label: "FLO", href: `https://www.music-flo.com/search/all?keyword=${query}`, kind: "search" },
   ] as { label: string; href: string; kind: "direct" | "search" }[];
 }

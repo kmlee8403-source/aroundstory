@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 const siteUrl = new URL(
-  `${(process.env.NEXT_PUBLIC_SITE_URL ?? "https://aroundstory.kmlee8403.chatgpt.site").replace(/\/$/, "")}/`,
+  `${(process.env.NEXT_PUBLIC_SITE_URL ?? "https://aroundstory.com").replace(/\/$/, "")}/`,
 );
 const socialImage = new URL("og-aroundstory-v3.png", siteUrl);
 const icon = new URL("assets/ari.png", siteUrl);

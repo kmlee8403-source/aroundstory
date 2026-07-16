@@ -1,4 +1,4 @@
-import { ArrowUpRight, ExternalLink, Headphones, Search } from "lucide-react";
+import { ExternalLink, Headphones, Search } from "lucide-react";
 import { PageIntro } from "../components/PageIntro";
 import { SiteFooter } from "../components/SiteFooter";
 import { SiteHeader } from "../components/SiteHeader";
@@ -9,6 +9,7 @@ const artistPlatforms = [
   { label: "Genie", href: "https://www.genie.co.kr/detail/artistInfo?xxnm=81253592" },
   { label: "Bugs", href: "https://music.bugs.co.kr/artist/20147016" },
   { label: "VIBE", href: "https://vibe.naver.com/artist/4896251" },
+  { label: "FLO", href: "https://www.music-flo.com/search/all?keyword=%EC%95%84%EB%A6%AC%20ari" },
 ];
 
 export default function MusicPage() {
@@ -48,10 +49,7 @@ export default function MusicPage() {
                 <p className="section-kicker">ALL RELEASES</p>
                 <h2>발매·참여작과 플랫폼 링크</h2>
               </div>
-              <div className="link-legend">
-                <span><ExternalLink size={14} /> 곡 상세</span>
-                <span><Search size={14} /> 곡명 검색</span>
-              </div>
+              <div className="link-legend"><span><ExternalLink size={14} /> 같은 모양의 버튼으로 각 플랫폼에서 듣기</span></div>
             </div>
 
             <div className="release-list">
@@ -63,7 +61,7 @@ export default function MusicPage() {
                     </span>
                     <span className="release-meta">
                       <small>{release.year} · {release.kind}</small>
-                      <strong>{release.title}</strong>
+                      <h3>{release.title}</h3>
                       <span className="release-credit">{release.artist} · {release.credit}</span>
                     </span>
                     <span className="release-count">{release.tracks.length} TRACKS</span>
@@ -74,18 +72,18 @@ export default function MusicPage() {
                       <li key={`${track.title}-${trackIndex}`}>
                         <span className="track-number">{String(trackIndex + 1).padStart(2, "0")}</span>
                         <div className="track-main">
-                          <h3>{track.title}</h3>
+                          <h4>{track.title}</h4>
                           <div className="platform-links">
                             {trackLinks(track, release).map((link) => (
                               <a
-                                className={link.kind === "search" ? "platform-search" : undefined}
+                                className="platform-link"
                                 href={link.href}
                                 key={link.label}
                                 target="_blank"
                                 rel="noreferrer"
                                 aria-label={`${track.title} - ${link.kind === "search" ? `${link.label} 결과 보기` : `${link.label}에서 열기`}`}
                               >
-                                {link.kind === "search" ? <Search size={12} /> : null}{link.label}
+                                <ExternalLink size={11} aria-hidden="true" />{link.label}
                               </a>
                             ))}
                           </div>
@@ -106,8 +104,14 @@ export default function MusicPage() {
             <div className="artist-platform-copy"><Headphones strokeWidth={1.4} /><h2>아리(ari)의 전체 발매 음원</h2><p>아리 이름으로 발매한 음원은 국내 주요 플랫폼의 아티스트 페이지에서 모아볼 수 있습니다.</p></div>
             <div className="artist-link-grid">
               {artistPlatforms.map((platform) => (
-                <a href={platform.href} key={platform.label} target="_blank" rel="noreferrer">{platform.label}<ArrowUpRight size={17} /></a>
+                <a href={platform.href} key={platform.label} target="_blank" rel="noreferrer">
+                  {platform.label}<ExternalLink size={13} aria-hidden="true" />
+                </a>
               ))}
+              <span className="artist-link-disabled" aria-disabled="true">
+                <span>악보 구매 <small>네이버 스마트스토어 · 준비 중</small></span>
+                <span className="pending-badge">준비 중</span>
+              </span>
             </div>
           </div>
         </section>
