@@ -276,5 +276,6 @@ export function trackLinks(track: Track, release: Release) {
       : { label: "Apple Music", href: `https://music.apple.com/kr/search?term=${query}`, kind: "search" },
     { label: "Spotify", href: `https://open.spotify.com/search/${query}`, kind: "search" },
     { label: "YouTube Music", href: `https://music.youtube.com/search?q=${query}`, kind: "search" },
+    { label: "FLO", href: `https://www.music-flo.com/search/all?keyword=${query}`, kind: "search" },
   ] as { label: string; href: string; kind: "direct" | "search" }[];
 }

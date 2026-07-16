@@ -13,7 +13,18 @@ export function SiteHeader() {
           />
         </a>
         <nav className="desktop-nav" aria-label="주요 메뉴">
-          {navigation.map((item) => (
+          {navigation.map((item) => item.children ? (
+            <div className="nav-group" key={item.href}>
+              <a className="nav-group-trigger" href={sitePath(item.href)} aria-haspopup="true">
+                {item.label}<span aria-hidden="true">⌄</span>
+              </a>
+              <div className="nav-submenu">
+                {item.children.map((child) => (
+                  <a href={sitePath(child.href)} key={child.href}>{child.label}</a>
+                ))}
+              </div>
+            </div>
+          ) : (
             <a href={sitePath(item.href)} key={item.href}>{item.label}</a>
           ))}
           <a className="nav-contact" href="mailto:ari@aroundstory.com">문의</a>

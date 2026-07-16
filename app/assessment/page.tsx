@@ -1,4 +1,5 @@
 import {
+  ArrowLeft,
   Binary,
   BookOpen,
   ClipboardList,
@@ -20,6 +21,7 @@ import {
 import { PageIntro } from "../components/PageIntro";
 import { SiteFooter } from "../components/SiteFooter";
 import { SiteHeader } from "../components/SiteHeader";
+import { sitePath } from "../site-config";
 
 const intelligences = [
   { name: "대인관계", text: "다른 사람의 말과 표정, 분위기를 읽고 공감·협력·조율하는 힘", Icon: Users },
@@ -53,12 +55,18 @@ export default function AssessmentPage() {
       <SiteHeader />
       <main>
         <PageIntro
-          index="04"
+          index="04-B"
           eyebrow="MULTIPLE INTELLIGENCES"
           title={<>손끝의 무늬보다<br /><strong>아이의 가능성</strong>을 봅니다.</>}
           description="다중지능 관점의 지문적성검사를 참고 자료로 활용해, 아이의 강점과 편안한 배움의 방식을 상담 안에서 함께 찾아갑니다."
           tone="blue"
         />
+
+        <nav className="shell lab-path" aria-label="아리엘브레인앤뮤직랩 하위 경로">
+          <a href={sitePath("/lab/")}><ArrowLeft size={15} /> 아리엘브레인앤뮤직랩</a>
+          <span aria-hidden="true">/</span>
+          <strong>다중지능지문적성검사</strong>
+        </nav>
 
         <section className="content-section intelligence-section">
           <div className="shell">
@@ -119,7 +127,10 @@ export default function AssessmentPage() {
           <div className="shell note-card">
             <strong>검사 결과는 진단이나 미래를 단정하는 자료가 아닙니다.</strong>
             <p>지문적성검사는 개인을 이해하기 위한 여러 참고 자료 중 하나입니다. 실제 상담에서는 발달 단계, 생활 경험, 관계와 환경을 함께 살피며 결과를 고정된 낙인으로 사용하지 않습니다.</p>
-            <a href="mailto:ari@aroundstory.com">검사·상담 문의하기</a>
+            <div className="lab-contact-stack">
+              <a href="mailto:ari@aroundstory.com">이메일로 검사·상담 문의</a>
+              <span className="lab-contact-pending" aria-disabled="true">카카오톡 오픈채팅 준비 중</span>
+            </div>
           </div>
         </section>
       </main>
