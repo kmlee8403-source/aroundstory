@@ -151,7 +151,7 @@ export default function AboutPage() {
               </div>
               <div className="representative-detail">
                 <Music2 size={21} strokeWidth={1.7} aria-hidden="true" />
-                <p><span>현재</span>aroundstory / 아리엘 브레인앤뮤직랩 대표</p>
+                <p><span>현재</span>aroundstory / 아리엘브레인앤뮤직랩 대표</p>
               </div>
               <div className="representative-detail">
                 <Award size={21} strokeWidth={1.7} aria-hidden="true" />

@@ -14,16 +14,17 @@ export function SiteHeader() {
         </a>
         <nav className="desktop-nav" aria-label="주요 메뉴">
           {navigation.map((item) => item.children ? (
-            <div className="nav-group" key={item.href}>
-              <a className="nav-group-trigger" href={sitePath(item.href)} aria-haspopup="true">
+            <details className="nav-group" key={item.href}>
+              <summary className="nav-group-trigger">
                 {item.label}<span aria-hidden="true">⌄</span>
-              </a>
+              </summary>
               <div className="nav-submenu">
+                <a href={sitePath(item.href)}>{item.label} 소개</a>
                 {item.children.map((child) => (
                   <a href={sitePath(child.href)} key={child.href}>{child.label}</a>
                 ))}
               </div>
-            </div>
+            </details>
           ) : (
             <a href={sitePath(item.href)} key={item.href}>{item.label}</a>
           ))}

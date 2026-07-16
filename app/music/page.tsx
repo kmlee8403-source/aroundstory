@@ -1,4 +1,4 @@
-import { ArrowUpRight, ExternalLink, Headphones, Search } from "lucide-react";
+import { ExternalLink, Headphones, Search } from "lucide-react";
 import { PageIntro } from "../components/PageIntro";
 import { SiteFooter } from "../components/SiteFooter";
 import { SiteHeader } from "../components/SiteHeader";
@@ -61,7 +61,7 @@ export default function MusicPage() {
                     </span>
                     <span className="release-meta">
                       <small>{release.year} · {release.kind}</small>
-                      <strong>{release.title}</strong>
+                      <h3>{release.title}</h3>
                       <span className="release-credit">{release.artist} · {release.credit}</span>
                     </span>
                     <span className="release-count">{release.tracks.length} TRACKS</span>
@@ -72,7 +72,7 @@ export default function MusicPage() {
                       <li key={`${track.title}-${trackIndex}`}>
                         <span className="track-number">{String(trackIndex + 1).padStart(2, "0")}</span>
                         <div className="track-main">
-                          <h3>{track.title}</h3>
+                          <h4>{track.title}</h4>
                           <div className="platform-links">
                             {trackLinks(track, release).map((link) => (
                               <a
@@ -104,11 +104,13 @@ export default function MusicPage() {
             <div className="artist-platform-copy"><Headphones strokeWidth={1.4} /><h2>아리(ari)의 전체 발매 음원</h2><p>아리 이름으로 발매한 음원은 국내 주요 플랫폼의 아티스트 페이지에서 모아볼 수 있습니다.</p></div>
             <div className="artist-link-grid">
               {artistPlatforms.map((platform) => (
-                <a href={platform.href} key={platform.label} target="_blank" rel="noreferrer">{platform.label}<ArrowUpRight size={17} /></a>
+                <a href={platform.href} key={platform.label} target="_blank" rel="noreferrer">
+                  {platform.label}<ExternalLink size={13} aria-hidden="true" />
+                </a>
               ))}
               <span className="artist-link-disabled" aria-disabled="true">
                 <span>악보 구매 <small>네이버 스마트스토어 · 준비 중</small></span>
-                <ArrowUpRight size={17} aria-hidden="true" />
+                <span className="pending-badge">준비 중</span>
               </span>
             </div>
           </div>

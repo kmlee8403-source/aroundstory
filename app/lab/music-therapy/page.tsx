@@ -5,7 +5,7 @@ import { SiteHeader } from "../../components/SiteHeader";
 import { sitePath } from "../../site-config";
 
 const SPORTS_VOUCHER_URL = "https://svoucher.kspo.or.kr/course/memberFacilityList.do?menuNo=8&topMenuNo=1&keyword=%EC%95%84%EB%A6%AC%EC%97%98%20%EB%B8%8C%EB%A0%88%EC%9D%B8%EC%95%A4%EB%AE%A4%EC%A7%81%EB%9E%A9";
-const DISABLED_SPORTS_VOUCHER_URL = "https://dvoucher.kspo.or.kr/course/memberFacilityList.do?menuNo=800002&topMenuNo=800001";
+const PARA_SPORTS_VOUCHER_URL = "https://dvoucher.kspo.or.kr/course/memberFacilityList.do?menuNo=800002&topMenuNo=800001";
 
 const programs = [
   {
@@ -28,7 +28,7 @@ const programs = [
 
 const voucherLinks = [
   { label: "스포츠강좌이용권 등록 시설 보기", href: SPORTS_VOUCHER_URL },
-  { label: "장애인스포츠강좌이용권 시설 조회", href: DISABLED_SPORTS_VOUCHER_URL },
+  { label: "장애인스포츠강좌이용권 시설 조회", href: PARA_SPORTS_VOUCHER_URL },
 ];
 
 export default function MusicTherapyPage() {
